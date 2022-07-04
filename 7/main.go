@@ -22,6 +22,11 @@ func Noreturn() {
 	fmt.Println("No Return")
 }
 
+// 関数を引数に取る関数
+func CallFunction(f func()) {
+	f()
+}
+
 func main() {
 	i := Plus(3, 4)
 	fmt.Println(i)
@@ -33,5 +38,9 @@ func main() {
 	fmt.Println(i4)
 
 	Noreturn()
+
+	CallFunction(func() {
+		fmt.Println("test")
+	})
 
 }
